@@ -5,7 +5,6 @@ import Home from './Pages/Home/Home'
 import Cart from './Pages/Cart/Cart'
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 import Footer from './Component/Footer/Footer';
-import XYZ from "./Component/XYZ/XYZ";
 
 import LoginPopup from './Component/LoginPopup/LoginPopup'
 
@@ -15,7 +14,6 @@ const App = () => {
 
   return (
     <>
-     <XYZ></XYZ>
     {showLogin?<LoginPopup setShowLogin={setShowLogin} />:<></>}
 
       <div className='app'>
