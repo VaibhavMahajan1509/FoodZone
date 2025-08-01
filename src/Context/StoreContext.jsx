@@ -7,14 +7,13 @@ const StoreContextProvider =(props) =>{
 
     const[cartItems,setCartItems]=useState({});
 
-    const addTocart = (itemId)=>{
-        if(!cartItems[itemId]){
-            setCartItems((prev)=>({...prev,[itemId]:1}))
-        }
-        else{
-            setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        }
+    const addToCart = (itemId) => {
+    if (!cartItems[itemId]) {
+        setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+    } else {
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     }
+};
 
     const removeFromCart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
@@ -32,13 +31,13 @@ const StoreContextProvider =(props) =>{
         return totalAmount;
     }
     const contextValue = {
-        food_list,
-        cartItems,
-        setCartItems,
-        addTocart,
-        removeFromCart,
-        getTotalCartAmount
-    }
+    food_list,
+    cartItems,
+    setCartItems,
+    addToCart, 
+    removeFromCart,
+    getTotalCartAmount
+};
     
     return(
         <StoreContext.Provider value={contextValue}>
